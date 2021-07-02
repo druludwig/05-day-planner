@@ -94,7 +94,7 @@ $( "#save16" ).click(function() {
 
 //Clear button
 $("#clear-button").click(function() {
-     let clearDay = confirm ("Are you sure you want to delete all data and start fresh?")
+     let clearDay = confirm ("Are you sure you want to delete all data and start fresh? \n\nREMINDER: If you clear your browser history, you will clear your notes unintentionally.")
         if (clearDay = true){
             localStorage.clear();
             location.reload(); 
