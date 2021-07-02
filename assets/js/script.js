@@ -9,15 +9,6 @@ let hour13 = document.getElementById("time13")
 let hour14 = document.getElementById("time14")
 let hour15 = document.getElementById("time15")
 let hour16 = document.getElementById("time16")
-let saveButton8 = document.querySelector("#save8")
-let button9 = document.querySelector("save9")
-let button10 = document.getElementById("save10")
-let button11 = document.getElementById("save11")
-let button12 = document.getElementById("save12")
-let button13 = document.getElementById("save13")
-let button14 = document.getElementById("save14")
-let button15 = document.getElementById("save15")
-let button16 = document.getElementById("save16")
 let textBox8 = document.getElementById("text8")
 let textBox9 = document.getElementById("text9")
 let textBox10 = document.getElementById("text10")
@@ -34,6 +25,10 @@ let hoursList = ["8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM
 let currentHour = 10
 // moment().format('H');
 
+setInterval(function(){ 
+    var today = moment();
+$("#date-display").text(today.format("h:mm:ss A [on] MMMM Do, YYYY"));
+}, 1000);
 
 //Generate time blocks with an ID matching the 24-hour time
 for (i = 8; i < 17; i++) {
@@ -98,5 +93,12 @@ $( "#save16" ).click(function() {
     localStorage.setItem("saved-notes-16", text16.value);
   });
 
-
+//Clear button
+$("#clear-button").click(function() {
+     let clearDay = confirm ("Are you sure you want to delete all data and start fresh?")
+        if (clearDay = true){
+            localStorage.clear();
+            location.reload(); 
+        }
+})
 

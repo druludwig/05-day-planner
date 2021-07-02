@@ -9,6 +9,10 @@ body {
   line-height: 1;
 }
 
+p {
+  font-size: 18px;
+}
+
 textarea {
   background-color: #eee;
   border: none;
