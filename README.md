@@ -12,6 +12,8 @@ Provide a short description explaining the what, why, and how of your project. U
 
 ## Learning Milestones
 What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Spent a lot of time on color blocks; proud
+
 
 ## Usage
 Provide instructions and examples for use. Include screenshots as needed.
