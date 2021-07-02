@@ -9,27 +9,20 @@ let hour13 = document.getElementById("time13")
 let hour14 = document.getElementById("time14")
 let hour15 = document.getElementById("time15")
 let hour16 = document.getElementById("time16")
-let textBox8 = document.getElementById("text8")
-let textBox9 = document.getElementById("text9")
-let textBox10 = document.getElementById("text10")
-let textBox11 = document.getElementById("text11")
-let textBox12 = document.getElementById("text12")
-let textBox13 = document.getElementById("text13")
-let textBox14 = document.getElementById("text14")
-let textBox15 = document.getElementById("text15")
-let textBox16 = document.getElementById("text16")
 
 let hoursList = ["8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM"]
 
-//To test after hours, set currentHour value to your current time in 24Hour format (e.g. 7pm becomes 19)
+// To test after hours, trick the app into thinking it's 11:00am 
+// let currentHour = 11
 let currentHour = moment().format('H');
 
+// Generate clock
 setInterval(function(){ 
-    var today = moment();
-$("#date-display").text(today.format("h:mm:ss A [on] MMMM Do, YYYY"));
+    let today = moment();
+    $("#date-display").text(today.format("h:mm:ss A [on] MMMM Do, YYYY"));
 }, 1000);
 
-//Generate time blocks with an ID matching the 24-hour time
+// Generate time blocks with an ID matching the 24-hour time
 for (i = 8; i < 17; i++) {
     $(`<div class="col-2 time-block space-between" id="time${i}"></div>`)
         .text(hoursList[i-8])
@@ -42,28 +35,26 @@ for (i = 8; i < 17; i++) {
         .appendTo(hourRow);
 }
 
-//Adapt background colors based on time of day
+// Loop through hours to decide background colors
 for (i = 8; i < 17; i++){
-   let displayHour = ("hour" + i)
-   let displayHourparsed = Number(displayHour.replace ("hour", ''));
-    if (displayHourparsed < currentHour){
+    if (i < currentHour){
       let pastHour = document.getElementById("time" + i)
       pastHour.style.backgroundColor = "#E8B9B2"}
-    if (displayHourparsed == currentHour){
+    if (i == currentHour){
         let nowColor = document.getElementById("time" + i)
         nowColor.style.backgroundColor = "#D1C7BB"}
-    if (displayHourparsed > currentHour){
+    if (i > currentHour){
         let futureColor = document.getElementById("time" + i)
         futureColor.style.backgroundColor = "#A6BC7B"}     
 }
 
-//Fill in saved notes
+// Fill in saved notes
 for (i = 8; i < 17; i++){
    let text = localStorage.getItem(`saved-notes-${i}`)
     document.getElementById(`text${i}`).value = text;
 }
 
-//Save buttons waiting for clicks
+// Save buttons waiting for clicks
 $( "#save8" ).click(function() {
     localStorage.setItem("saved-notes-8", text8.value);
   });
@@ -92,7 +83,7 @@ $( "#save16" ).click(function() {
     localStorage.setItem("saved-notes-16", text16.value);
   });
 
-//Clear button
+// Clear button
 $("#clear-button").click(function() {
      let clearDay = confirm ("Are you sure you want to delete all data and start fresh? \n\nREMINDER: If you clear your browser history, you will clear your notes unintentionally.")
         if (clearDay = true){
