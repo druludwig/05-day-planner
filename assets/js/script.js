@@ -22,7 +22,7 @@ let textBox16 = document.getElementById("text16")
 let hoursList = ["8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM"]
 
 //To test after hours, set currentHour value to your current time in 24Hour format (e.g. 7pm becomes 19)
-let currentHour = 10
+let currentHour = 11
 // moment().format('H');
 
 setInterval(function(){ 
@@ -39,7 +39,7 @@ for (i = 8; i < 17; i++) {
         .attr("placeholder", "Enter note here")
         .appendTo(hourRow);
     $(`<button class="col-2 btn btn-secondary saveBtn space-between" id="save${i}"></button>`)
-        .text("SAVE")
+        .html(`SAVE<br><i class="far fa-save"></i>`)
         .appendTo(hourRow);
 }
 
@@ -49,13 +49,13 @@ for (i = 8; i < 17; i++){
    let displayHourparsed = Number(displayHour.replace ("hour", ''));
     if (displayHourparsed < currentHour){
       let pastHour = document.getElementById("time" + i)
-      pastHour.style.backgroundColor = "red"}
+      pastHour.style.backgroundColor = "#E8B9B2"}
     if (displayHourparsed == currentHour){
         let nowColor = document.getElementById("time" + i)
-        nowColor.style.backgroundColor = "blue"}
+        nowColor.style.backgroundColor = "#D1C7BB"}
     if (displayHourparsed > currentHour){
         let futureColor = document.getElementById("time" + i)
-        futureColor.style.backgroundColor = "green"}     
+        futureColor.style.backgroundColor = "#A6BC7B"}     
 }
 
 //Fill in saved notes
@@ -64,7 +64,7 @@ for (i = 8; i < 17; i++){
     document.getElementById(`text${i}`).value = text;
 }
 
-//Save buttons
+//Save buttons waiting for clicks
 $( "#save8" ).click(function() {
     localStorage.setItem("saved-notes-8", text8.value);
   });
@@ -101,4 +101,3 @@ $("#clear-button").click(function() {
             location.reload(); 
         }
 })
-

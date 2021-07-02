@@ -1,27 +1,22 @@
 
-# Day Planner
+# Day Planner 1.0
+Launch App: https://druludwig.github.io/05-day-planner/
 ## Description
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+Plan your day. Simply.
 
 ## User Friendly Features
--  colors behind times but not text to keep it readable (accessibility color blind)
+- A large built in clock keeps the user on track
+- Data remains saved if the user leaves the page or closes the browser
+- Save feature is communicated visually with an icon <em>and</em> text
+- Quickly start a new day with a <strong>CLEAR ALL</strong> button
 
-## Learning Milestones
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-Spent a lot of time on color blocks; proud
+## Notes
+Many hours went into minimizing the code -- and being completely new to Javascript, I may have taken some unorthodox approaches. I'm looking forward to revisiting this project in the future to retrofit the code and implement a couple new features.
 
+## Next Version
+- Allow user to customize the range of available hours
+- Allow user to print a formatted version of the planner
 
-## Usage
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+## Screenshot
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
-## Tests
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+<img src="./assets/images/screen-shot-day-planner.png">

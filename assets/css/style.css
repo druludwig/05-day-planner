@@ -1,8 +1,3 @@
-:root{
-  --accent-color-1: #CCCCCC;
-}
-
-
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -10,7 +5,8 @@ body {
 }
 
 p {
-  font-size: 18px;
+  font-size: 16px;
+  color: #363636;
 }
 
 textarea {
@@ -18,7 +14,7 @@ textarea {
   border: none;
   resize: none;
   color: #000000;
-  border: 1px solid var(--accent-color-1) ;
+  border: 1px solid #CCCCCC ;
   padding: 10px;
 }
 
@@ -27,7 +23,17 @@ textarea {
   background-color: transparent;
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  background-image: linear-gradient(to right, rgb(133, 152, 147) , rgb(205, 209, 207));
+  padding: 25px 0px 25px 0px;
+  box-shadow: 0px 15px 15px rgb(202, 202, 202);
+}
+
+.headline {
+  color: #2e2e2e;
+}
+
+#date-display {
+  color: #ffffff;
 }
 
 .description {
@@ -35,7 +41,9 @@ textarea {
 }
 
 .time-block {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #c3e6cb;
   line-height: 60px;
   font-size: 27px;
@@ -49,7 +57,6 @@ textarea {
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
   border-top: 1px solid white;
 }
 
@@ -75,14 +82,18 @@ textarea {
 }
 
 .saveBtn {
-  border: 1px 1px 1px 0px solid #8fd19e;
+  border: 1px 1px 1px 0px solid #6d6d6d;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
-  color: white;
+  background-color: #A4BBD3;
+  color: #363636;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
+.saveBtn:hover {
+  font-size: 17px;
   transition: all 0.3s ease-in-out;
+}
+
+#clear-button {
+  margin-top: 15px;
 }
