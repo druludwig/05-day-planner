@@ -5,7 +5,7 @@ Launch App: https://druludwig.github.io/05-day-planner/
 Plan your day. Simply.
 
 ## User Friendly Features
-- A large built in clock keeps the user on track
+- A large built-in clock keeps the user on track down to the second
 - Data remains saved if the user leaves the page or closes the browser
 - Save feature is communicated visually with an icon <em>and</em> text
 - Quickly start a new day with a <strong>CLEAR ALL</strong> button

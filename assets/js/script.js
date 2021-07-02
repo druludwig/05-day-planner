@@ -22,8 +22,7 @@ let textBox16 = document.getElementById("text16")
 let hoursList = ["8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM"]
 
 //To test after hours, set currentHour value to your current time in 24Hour format (e.g. 7pm becomes 19)
-let currentHour = 11
-// moment().format('H');
+let currentHour = moment().format('H');
 
 setInterval(function(){ 
     var today = moment();
